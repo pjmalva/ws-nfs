@@ -320,8 +320,8 @@ class WebService
      */
     public function ContatoTomador(stdClass $std)
     {
-        $this->contatoPrestador = $this->obterContato($std);
-        return $this->contatoPrestador;
+        $this->contatoTomador = $this->obterContato($std);
+        return $this->contatoTomador;
     }
 
     /*
