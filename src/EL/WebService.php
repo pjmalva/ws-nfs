@@ -119,7 +119,7 @@ class WebService
             }
         }
 
-        $this->addChild($identificacao, 'InscricaoMunicipal', $std->inscricaoMunicipal);
+        $this->addChild($identificacao, 'InscricaoMunicipal', $std->inscricaoMunicipal, false);
 
         return $identificacao;
     }
