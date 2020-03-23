@@ -224,8 +224,13 @@ class WebService
         $this->addChild($Rps, 'IssRetido', $std->issRetido);
         $this->addChild($Rps, 'DataEmissao', $std->dataEmissao);
 
-        $this->nfsStatus = $std->status;
-        $this->nfsObs = $std->observacao;
+        if (isset($std->status)) {
+            $this->nfsStatus = $std->status;
+        }
+
+        if (isset($std->observacao)) {
+            $this->nfsObs = $std->observacao;
+        }
 
         $this->rps = $Rps;
         return $Rps;
