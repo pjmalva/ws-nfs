@@ -1,11 +1,9 @@
 <?php
 
-namespace NFs\EL;
+namespace NotaFiscalServico\EL;
 
 use SoapClient;
-
 use stdClass;
-
 use DOMDocument;
 use DOMElement;
 use SoapFault;
