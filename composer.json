@@ -29,7 +29,7 @@
   },
   "autoload": {
     "psr-4": {
-      "NFs\\EL\\": "src/"
+      "NotaFiscalServico\\EL\\": "src/"
     }
   },
   "minimum-stability": "stable",
