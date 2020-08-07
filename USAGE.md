@@ -4,6 +4,12 @@
 
 ### Funções para informar os dados da NFs
 
+**Adicionando ao arquivo**
+
+```
+use NotaFiscalServico\EL\WebService;
+```
+
 **setUrlWsdl( $url )**
 
 Informa qual a **URL** do Web Service que você quer consumir
