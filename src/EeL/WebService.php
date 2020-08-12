@@ -1,6 +1,6 @@
 <?php
 
-namespace NotaFiscalServico\EL;
+namespace NotaFiscalServico\EeL;
 
 use SoapClient;
 use stdClass;
