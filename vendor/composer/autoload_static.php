@@ -9,15 +9,19 @@ class ComposerStaticInit2fd20c0a699550d7d9dd8aa20977a457
     public static $prefixLengthsPsr4 = array (
         'N' => 
         array (
-            'NotaFiscalServico\\EeL\\' => 22,
+            'NotaFiscalServico\\' => 18,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'NotaFiscalServico\\EeL\\' => 
+        'NotaFiscalServico\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
+    );
+
+    public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -25,6 +29,7 @@ class ComposerStaticInit2fd20c0a699550d7d9dd8aa20977a457
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit2fd20c0a699550d7d9dd8aa20977a457::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit2fd20c0a699550d7d9dd8aa20977a457::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit2fd20c0a699550d7d9dd8aa20977a457::$classMap;
 
         }, null, ClassLoader::class);
     }

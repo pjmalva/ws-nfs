@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'NotaFiscalServico\\EeL\\' => array($baseDir . '/src'),
+    'NotaFiscalServico\\' => array($baseDir . '/src'),
 );
