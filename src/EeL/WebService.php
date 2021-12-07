@@ -46,7 +46,7 @@ class WebService
 
     protected $valores;
 
-    public $xml = NULL;
+    public $xml = null;
 
     public function __construct($version = '1.0', $charset = 'utf-8')
     {
@@ -76,7 +76,7 @@ class WebService
             // dd( $content );
             $parent->appendChild($content);
         } else {
-            if (!$required && ($content == '' || $content == NULL || $content == 0)) {
+            if (!$required && ($content == '' || $content == null || $content == 0)) {
                 return;
             }
 
@@ -283,8 +283,7 @@ class WebService
     /*
      * tcContato
      */
-    public
-    function ContatoPrestador(stdClass $std)
+    public function ContatoPrestador(stdClass $std)
     {
         $this->contatoPrestador = $this->obterContato($std);
         return $this->contatoPrestador;
@@ -293,8 +292,7 @@ class WebService
     /*
      * tcDadosTomador
      */
-    public
-    function DadosTomador(stdClass $std)
+    public function DadosTomador(stdClass $std)
     {
         $this->dadosTomador = $this->obterDadosDoAtor($std, WebService::TOMADOR);
         return $this->dadosTomador;
@@ -457,9 +455,9 @@ class WebService
         return $this->xml;
     }
 
-    public function getArray($xml = NULL)
+    public function getArray($xml = null)
     {
-        if ($xml == NULL) {
+        if ($xml == null) {
             $xml = $this->xml;
         }
 
@@ -575,10 +573,34 @@ class WebService
         };
     }
 
-    public function imprimirNFse( $cnpj, $chave )
+    public function consultarNfseEnviadaNoPeriodo($cnpj, $dataInicial, $dataFinal)
+    {
+        try {
+            $soapClient = new SoapClient($this->urlWsdl, array(
+                'exceptions' => true,
+                'trace' => true
+            ));
+
+            $batch_serach = array(
+                'ConsultarNfseEnvio' => array(
+                    'identificacaoPrestador' => $cnpj,
+                    'dataInicial' => $dataInicial,
+                    'dataFinal' => $dataFinal,
+                )
+            );
+
+            $request_batch_serach = $soapClient->__call('ConsultarNfseEnvio', $batch_serach);
+            return $request_batch_serach->return;
+        } catch (SoapFault $exception) {
+            return $exception->getMessage();
+        };
+    }
+
+    public function imprimirNFse($cnpj, $chave)
     {
         // $this->urlWsdl
-        // https://es-colatina-pm-nfs.cloud.el.com.br/paginas/sistema/autenticacao.jsf?cpfCnpj=39384664000137&chave=08cdeb625310f7cb00d11ba01396bf67
+        // https://es-colatina-pm-nfs.cloud.el.com.br/paginas/sistema/autenticacao.jsf?
+        // cpfCnpj=39384664000137&chave=08cdeb625310f7cb00d11ba01396bf67
     }
 
     public function autenticarContribuinte($cnpj, $senha)

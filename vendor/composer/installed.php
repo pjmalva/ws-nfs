@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '788dad303cda9c7f8b0e4f4a1d2260c73eb7419d',
+    'reference' => 'e4058d1513faa38fffcd67b81af9d841ff285744',
     'name' => 'pjmalva/ws-nfs',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '788dad303cda9c7f8b0e4f4a1d2260c73eb7419d',
+      'reference' => 'e4058d1513faa38fffcd67b81af9d841ff285744',
     ),
   ),
 );
