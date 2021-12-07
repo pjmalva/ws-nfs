@@ -598,9 +598,12 @@ class WebService
 
     public function imprimirNFse($cnpj, $chave)
     {
-        // $this->urlWsdl
-        // https://es-colatina-pm-nfs.cloud.el.com.br/paginas/sistema/autenticacao.jsf?
-        // cpfCnpj=39384664000137&chave=08cdeb625310f7cb00d11ba01396bf67
+        $url = "https://es-colatina-pm-nfs.cloud.el.com.br";
+        $url .= "/paginas/sistema/autenticacaoNota.jsf?";
+        $url .= "cpfCnpj=" . $cnpj;
+        $url .= "&chave=" . $chave;
+        $pdf = file_get_contents($url);
+        return $pdf;
     }
 
     public function autenticarContribuinte($cnpj, $senha)
